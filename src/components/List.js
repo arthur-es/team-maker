@@ -1,11 +1,12 @@
 import React from "react";
 
-const List = ({ itens }) => {
+const List = ({ title = 'Missing Title', itens }) => {
     return (
         <div>
+            <h2>{title}</h2>
             <ul>
                 {itens.map((player) => {
-                  return <li key="player.id">{player.name}</li>
+                  return <li key={player.name}>{player.name}</li>
                 })}
             </ul>
         </div>
