@@ -3,3 +3,6 @@
 - [ ] Add the App state to the local storage
 - [ ] Build the MVP project
 - [ ] Upload MVP to tp.acctech.software
+- [ ] Style the MVP
+- [ ] Build the MVP project
+- [ ] Upload MVP to tp.acctech.software
