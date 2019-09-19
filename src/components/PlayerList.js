@@ -1,25 +1,73 @@
 import React, { useState } from "react";
 import Form from "./Form";
 
-const PlayerList = () => {
-	const [players, setPlayers] = useState([
-		{ id: 1, name: "Arthur", skill: 3 },
-		{ id: 2, name: "Lucas", skill: 4 }
-	]);
-
-	const addPlayer = (name) => {
-		setPlayers([...players, { id: 3, name, skill: 5 }]);
+const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) => {
+	const [players, setPlayers] = useState([]);
+	
+	const addBenchPlayers = (index) => {
+		setBenchPlayers([players[index]]);
 	}
 
+	const randomizeTeams = () => {
+		setBenchPlayers([]);
+		let teamOne = [], teamTwo = [];
+		const numPlayers = players.length;
+		const maxPlayersByTeam = Math.floor(numPlayers / 2);
+		let waitingPlayerIndex = -1;
+		
+		if (numPlayers%2 !== 0){
+			waitingPlayerIndex = parseInt(Math.random()*numPlayers);
+			addBenchPlayers(waitingPlayerIndex);
+		}
+		
+		for(let i = 0; i < numPlayers; i++) {
+			if (i === waitingPlayerIndex) continue;
+			const assignedTeam = Math.round(Math.random());
+			if (assignedTeam === 0 && teamOne.length < maxPlayersByTeam) {
+				teamOne.push(players[i]);	
+			} else if(teamTwo.length < maxPlayersByTeam) { 
+				teamTwo.push(players[i]);
+			} else {
+				teamOne.push(players[i]);
+			}
+		}
+
+		setTeamOne(teamOne);
+		setTeamTwo(teamTwo);
+	}
+
+	const addPlayer = (name) => {
+		setPlayers([...players, { name, skill: 5 }]);
+	}
+	
+	const deletePlayer = (name) => {
+		let playersUpdated = players.filter( player => player.name !== name );
+		setPlayers(playersUpdated);
+	}
+	
 	return (
 		<div>
 			<h1>List of Players</h1>
 			<Form addPlayer={addPlayer}/>
 			<ul>
 				{players.map(player => (
-					<li key={player.name}>{player.name}</li>
+					<li key={player.name}>
+						{player.name} 
+						<span>
+							<button
+								onClick={() => {
+									deletePlayer(player.name);
+								}}
+							>X</button>
+						</span> 
+					</li>
 				))}
 			</ul>
+			<button id="select-teams" 
+				onClick={randomizeTeams} 
+				disabled={players.length <= 1}
+			> Create Teams
+			</button>
 		</div>
 	);
 };

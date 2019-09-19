@@ -5,8 +5,8 @@ const List = ({ title = 'Missing Title', itens }) => {
         <div>
             <h2>{title}</h2>
             <ul>
-                {itens.map((player) => {
-                  return <li key={player.name}>{player.name}</li>
+                {itens.map((item) => {
+                  return <li key={item.name}>{item.name}</li>
                 })}
             </ul>
         </div>
