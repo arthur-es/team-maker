@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import Form from "./Form";
+import './css/Form.css'
 
 const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) => {
 	
@@ -49,7 +51,7 @@ const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) 
 	}
 	
 	return (
-		<div>
+		<div className='PlayerList'>
 			<Form addPlayer={addPlayer}/>
 			<div className="app-list-players">
 				<h1>List of Players</h1>

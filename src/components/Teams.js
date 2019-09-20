@@ -1,9 +1,11 @@
 import React from "react";
+
 import List from "./List";
+import './css/Teams.css'
 
 const Teams = ({teamOne, teamTwo, benchPlayers}) => {
     return (
-        <div>
+        <div className='Teams'>
             <h1 className="teams-title">Teams</h1>
             <div className="app-team-one">
                 <List itens={teamOne} title="Team One"></List>

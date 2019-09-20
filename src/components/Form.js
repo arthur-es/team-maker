@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import './css/Form.css'
+
 const Form = ({addPlayer}) => {
 	
 	const [ name, setName ] = useState("");
@@ -11,7 +13,7 @@ const Form = ({addPlayer}) => {
 	}
 
 	return (
-		<div className="app-form">
+		<div className="Form">
 			<form onSubmit={handleSubmit}>
 				<input 
 					type="text" 

@@ -1,8 +1,10 @@
 import React from "react";
 
+import './css/List.css'
+
 const List = ({ title = 'Missing Title', itens }) => {
     return (
-        <div>
+        <div classNmae="List">
             <h2>{title}</h2>
             <ul>
                 {itens.map((item) => {
