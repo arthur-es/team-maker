@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Form from "./Form";
 
 const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) => {
-	const [players, setPlayers] = useState([]);
 	
-	const addBenchPlayers = (index) => {
+	const [players, setPlayers] = useState([]);
+
+	const addBenchPlayers = (index) => {	
 		setBenchPlayers([players[index]]);
 	}
 
@@ -38,6 +39,8 @@ const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) 
 
 	const addPlayer = (name) => {
 		setPlayers([...players, { name, skill: 5 }]);
+		const array = [...players];
+		localStorage.setItem('TP_PLAYERS', JSON.stringify(array));	
 	}
 	
 	const deletePlayer = (name) => {
