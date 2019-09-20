@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './App.css'
+import './css/App.css'
 import Header from "./components/Header";
 import PlayerList from "./components/PlayerList";
 import Teams from "./components/Teams";
