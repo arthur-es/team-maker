@@ -13,7 +13,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Header
-				title="Team Maker"
+				title="Team Picker"
 				subTitle="Make a fair game"
 			></Header>
 			<div className="playerList">
