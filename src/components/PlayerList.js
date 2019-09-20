@@ -50,27 +50,31 @@ const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) 
 	
 	return (
 		<div>
-			<h1>List of Players</h1>
 			<Form addPlayer={addPlayer}/>
-			<ul>
-				{players.map(player => (
-					<li key={player.name}>
-						{player.name} 
-						<span>
-							<button
-								onClick={() => {
-									deletePlayer(player.name);
-								}}
-							>X</button>
-						</span> 
-					</li>
-				))}
-			</ul>
-			<button id="select-teams" 
-				onClick={randomizeTeams} 
-				disabled={players.length <= 1}
-			> Create Teams
-			</button>
+			<div className="app-list-players">
+				<h1>List of Players</h1>
+				<ul>
+					{players.map(player => (
+						<li key={player.name}>
+							{player.name} 
+							<span>
+								<button
+									onClick={() => {
+										deletePlayer(player.name);
+									}}
+								>X</button>
+							</span> 
+						</li>
+					))}
+				</ul>
+			</div>
+			<div className="app-btn-generate-teams">
+				<button id="select-teams" 
+					onClick={randomizeTeams} 
+					disabled={players.length <= 1}
+				> Create Teams
+				</button>
+			</div>
 		</div>
 	);
 };

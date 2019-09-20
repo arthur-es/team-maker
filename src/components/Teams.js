@@ -4,11 +4,11 @@ import List from "./List";
 const Teams = ({teamOne, teamTwo, benchPlayers}) => {
     return (
         <div>
-            <h1>Teams</h1>
-            <div>
+            <h1 className="teams-title">Teams</h1>
+            <div className="app-team-one">
                 <List itens={teamOne} title="Team One"></List>
             </div>
-            <div>
+            <div className="app-team-two">
                 <List itens={teamTwo} title="Team Two"></List>
             </div>
             {

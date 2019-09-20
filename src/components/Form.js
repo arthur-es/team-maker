@@ -11,16 +11,18 @@ const Form = ({addPlayer}) => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<input 
-				type="text" 
-				id="playerNameInput" 
-				value={name} 
-				required
-				onChange={(e) => setName(e.target.value)} 	
-			/>
-			<button type="submit"> Add Player </button>
-		</form>
+		<div className="app-form">
+			<form onSubmit={handleSubmit}>
+				<input 
+					type="text" 
+					id="playerNameInput" 
+					value={name} 
+					required
+					onChange={(e) => setName(e.target.value)} 	
+				/>
+				<button type="submit"> Add Player </button>
+			</form>
+		</div>
 	);
 };
 

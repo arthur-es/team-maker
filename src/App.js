@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import './App.css'
 import Header from "./components/Header";
 import PlayerList from "./components/PlayerList";
 import Teams from "./components/Teams";
@@ -11,10 +11,12 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Header
-				title="Team Picker"
-				subTitle="Make a fair game"
-			></Header>
+			<div className="app-header">
+				<Header
+					title="Team Picker"
+					subTitle="Make a fair game"
+				></Header>
+			</div>
 			<div className="playerList">
 				<PlayerList 
 					setBenchPlayers={setBenchPlayers}

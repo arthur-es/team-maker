@@ -1,10 +1,10 @@
 import React from 'react';
-
+import './css/Header.css'
 const Header = ({ title, subTitle }) => {
   return (
     <div>
-      <div>
-        <h1>{title}</h1>
+      <div className="header">
+        <h1 className="main-title">{title}</h1>
         <h2>{subTitle}</h2>
       </div>
     </div> 
