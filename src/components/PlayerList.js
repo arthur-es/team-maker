@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import Form from "./Form";
 import './../styles/PlayerList.css'
 
-const PlayerList = ({ class_name, setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) => {
+const PlayerList = ({ class_name, setTeamOne, setTeamTwo, setBenchPlayers }) => {
 	
-	const [players, setPlayers] = useState([]);
+	const [players, setPlayers] = useState(JSON.parse(localStorage.getItem('TP_PLAYERS')) || []);
+	localStorage.setItem('TP_PLAYERS', JSON.stringify(players));
 
 	const addBenchPlayers = (index) => {	
 		setBenchPlayers([players[index]]);
@@ -41,15 +42,13 @@ const PlayerList = ({ class_name, setTeamOne, setTeamTwo, benchPlayers,  setBenc
 
 	const addPlayer = (name) => {
 		setPlayers([...players, { name, skill: 5 }]);
-		const array = [...players];
-		localStorage.setItem('TP_PLAYERS', JSON.stringify(array));	
 	}
 	
 	const deletePlayer = (name) => {
 		let playersUpdated = players.filter( player => player.name !== name );
 		setPlayers(playersUpdated);
 	}
-	
+
 	return (
 		<div className={class_name}>
 			<Form 
