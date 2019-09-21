@@ -1,0 +1,14 @@
+.Header {
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #27afc7;
+  grid-area: header;
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+/*# sourceMappingURL=Header.css.map */

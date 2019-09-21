@@ -1,0 +1,26 @@
+@import './reset';
+
+.App {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 90px auto;
+  grid-gap: 5px;
+  grid-template-areas: 
+    "header" 
+    "body";
+
+  text-align: center;
+  background-color: rgb(71,71,71);
+
+  .Body {
+    grid-area: body;
+    background-color: yellowgreen;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas: 
+      "PlayerList"
+      "Teams";
+  }
+}

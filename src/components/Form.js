@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import './css/Form.css'
+import './../styles/Form.css'
 
-const Form = ({addPlayer}) => {
+const Form = ({addPlayer, class_name}) => {
 	
 	const [ name, setName ] = useState("");
 
@@ -13,7 +13,7 @@ const Form = ({addPlayer}) => {
 	}
 
 	return (
-		<div className="Form">
+		<div className={class_name}>
 			<form onSubmit={handleSubmit}>
 				<input 
 					type="text" 

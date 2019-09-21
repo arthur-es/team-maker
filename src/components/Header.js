@@ -1,15 +1,13 @@
 import React from 'react';
 
-import './css/Header.css'
+import './../styles/Header.css'
 
-const Header = ({ title, subTitle }) => {
+const Header = ({ title, subTitle, class_name }) => {
   return (
-    <div>
-      <div className="Header">
-        <h1 className="main-title">{title}</h1>
-        <h2>{subTitle}</h2>
-      </div>
-    </div> 
+    <div className={class_name}>
+      <h1 className="title">{title}</h1>
+      <h2 className="subTitle">{subTitle}</h2>
+    </div>
   )
 }
 

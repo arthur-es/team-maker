@@ -1,14 +1,14 @@
 import React from "react";
 
-import './css/List.css'
+import './../styles/List.css'
 
-const List = ({ title = 'Missing Title', itens }) => {
+const List = ({ title = 'Missing Title', itens, class_name }) => {
     return (
-        <div classNmae="List">
+        <div className={class_name}>
             <h2>{title}</h2>
             <ul>
                 {itens.map((item) => {
-                  return <li key={item.name}>{item.name}</li>
+                    return <li key={item.name}>{item.name}</li>
                 })}
             </ul>
         </div>

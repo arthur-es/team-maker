@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import Form from "./Form";
-import './css/Form.css'
+import './../styles/PlayerList.css'
 
-const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) => {
+const PlayerList = ({ class_name, setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) => {
 	
 	const [players, setPlayers] = useState([]);
 
@@ -51,10 +51,13 @@ const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) 
 	}
 	
 	return (
-		<div className='PlayerList'>
-			<Form addPlayer={addPlayer}/>
+		<div className={class_name}>
+			<Form 
+				class_name="Form"
+				addPlayer={addPlayer}
+			/>
 			<div className="app-list-players">
-				<h1>List of Players</h1>
+				<h1 className="player-list-title">List of Players</h1>
 				<ul>
 					{players.map(player => (
 						<li key={player.name}>
@@ -70,13 +73,11 @@ const PlayerList = ({ setTeamOne, setTeamTwo, benchPlayers,  setBenchPlayers }) 
 					))}
 				</ul>
 			</div>
-			<div className="app-btn-generate-teams">
-				<button id="select-teams" 
-					onClick={randomizeTeams} 
-					disabled={players.length <= 1}
-				> Create Teams
-				</button>
-			</div>
+			<button className="select-teams" 
+				onClick={randomizeTeams} 
+				disabled={players.length <= 1}
+			> Create Teams
+			</button>
 		</div>
 	);
 };
