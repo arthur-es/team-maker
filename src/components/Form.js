@@ -5,7 +5,7 @@ import './../styles/Form.css'
 const Form = ({addPlayer, class_name}) => {
 	
 	const [ name, setName ] = useState("");
-	const [ skill, setSkill ] = useState("");
+	const [ skill, setSkill ] = useState(3);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -23,12 +23,12 @@ const Form = ({addPlayer, class_name}) => {
 					required
 					onChange={(e) => setName(e.target.value)} 	
 				/>
-				<select onChange={(e) => setSkill(e.target.value)}>
-					<option> 1 </option>
-					<option> 2 </option>
-					<option> 3 </option>
-					<option> 4 </option>
-					<option> 5 </option>
+				<select defaultValue={3} onChange={ (e) => setSkill(e.target.value) }>
+					<option value={1}> 1 </option>
+					<option value={2}> 2 </option>
+					<option value={3}> 3 </option>
+					<option value={4}> 4 </option>
+					<option value={5}> 5 </option>
 				</select>
 				<button type="submit"> Add Player </button>
 			</form>

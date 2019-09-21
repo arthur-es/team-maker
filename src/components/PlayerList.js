@@ -40,7 +40,7 @@ const PlayerList = ({ class_name, setTeamOne, setTeamTwo, setBenchPlayers }) => 
 		setTeamTwo(teamTwo);
 	}
 
-	const addPlayer = (name, skill) => {
+	const addPlayer = (name, skill = '1') => {
 		setPlayers([...players, { name, skill }]);
 	}
 	
