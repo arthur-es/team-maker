@@ -1,8 +1,8 @@
-- [ ] Change name to Team Picker
-- [ ] Make a clear all player from LIST
-- [ ] Add the App state to the local storage
-- [ ] Build the MVP project
-- [ ] Upload MVP to tp.acctech.software
+- [x] Change name to Team Picker
+- [x] Make a clear all player from LIST
+- [x] Add the App state to the local storage
+- [x] Build the MVP project
+- [x] Upload MVP to tp.acctech.software
 - [ ] Style the MVP
 - [ ] Build the MVP project
 - [ ] Upload MVP to tp.acctech.software

@@ -49,6 +49,10 @@ const PlayerList = ({ class_name, setTeamOne, setTeamTwo, setBenchPlayers }) => 
 		setPlayers(playersUpdated);
 	}
 
+	const deleteAll = () => {
+		setPlayers([]);
+	}
+
 	return (
 		<div className={class_name}>
 			<Form 
@@ -72,6 +76,10 @@ const PlayerList = ({ class_name, setTeamOne, setTeamTwo, setBenchPlayers }) => 
 					))}
 				</ul>
 			</div>
+			<button className="delete-all" 
+				onClick={deleteAll} 
+			> Delete All
+			</button>
 			<button className="select-teams" 
 				onClick={randomizeTeams} 
 				disabled={players.length <= 1}
